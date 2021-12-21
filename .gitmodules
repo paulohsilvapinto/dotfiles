@@ -1,0 +1,3 @@
+[submodule ".oh-my-zsh/custom/plugins/zsh-git-prompt"]
+	path = .oh-my-zsh/custom/plugins/zsh-git-prompt
+	url = https://github.com/zsh-git-prompt/zsh-git-prompt.git
