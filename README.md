@@ -10,13 +10,13 @@ For using this repository, you will need:
  - [Ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
  - Vim-nox
 
-You can install vim-nov by running:
+You can install vim-nox by running:
 
 ```bash
 sudo apt install vim-nox
 ```
 
- - Python Build dependencies (for [Pyenv](https://github.com/pyenv/pyenv)
+ - Python Build dependencies (for [Pyenv](https://github.com/pyenv/pyenv))
 
 ## Installation
 
