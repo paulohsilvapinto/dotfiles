@@ -20,9 +20,15 @@ sudo apt install vim-nox
 
 ## Installation
 
-Clone the repository and run:
+1. Clone the repository and run:
 
 ```bash
 zsh ./make.sh
 ```
 
+2. Open vim and run:
+```bash
+:PluginInstall
+```
+
+3. Follow the instructios for [installing YouCompleteMe](https://github.com/ycm-core/YouCompleteMe#installation), which is a vim plugin.
