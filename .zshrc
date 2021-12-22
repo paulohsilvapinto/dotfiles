@@ -143,7 +143,7 @@ eval "$(pyenv init -)"
 source $ZSH/oh-my-zsh.sh
 source $ZSH/custom/plugins/zsh-git-prompt/zshrc.sh
 
-extras_file=/.extras
+extras_file=~/.extras
 if [ -f "$extras_file" ]; then
     source $extras_file
 fi

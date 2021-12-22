@@ -9,8 +9,16 @@ base_path="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"    # Script lo
 bkp_dir=~/dotfiles_bkp                  # Dotfiles backup directory
 omz_custom_dir=.oh-my-zsh/custom        # Oh-my-zsh custom directory 
 plugins_path=$omz_custom_dir/plugins    # Oh-my-zsh plugins directory
-dotfiles=(vimrc zshrc gitconfig profile zprofile)        # list of files/folders to symlink in homedir
+dotfiles=(vimrc zshrc gitconfig profile zprofile extras)        # list of files/folders to symlink in homedir
 ##########
+
+
+cd $base_path
+if [[ ! -a ./.extras ]]; then
+    echo "Creating extras file"
+    cp .extras.example .extras
+    "${EDITOR:-vi}" .extras
+fi
 
 # Go to the Oh-my-zsh plugins directory
 cd $base_path/$plugins_path
@@ -27,7 +35,7 @@ cat zsh-git-prompt-custom-zshrc.sh > zsh-git-prompt/zshrc.sh
 echo "Creating Oh-my-zsh custom symlink"
 mv ~/$omz_custom_dir ~/"$omz_custom_dir"_bkp
 ln -sf $base_path/$omz_custom_dir ~/$omz_custom_dir
-
+ 
 echo "Creating $bkp_dir for backup of any existing dotfiles in ~"
 mkdir -p $bkp_dir
 
