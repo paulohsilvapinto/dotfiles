@@ -70,7 +70,20 @@ ZSH_THEME="paulopinto"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-vi-mode alias-finder colored-man-pages colorize copyfile extract safe-paste systemadmin urltools)
+plugins=(
+    git
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    zsh-vim-mode
+    alias-finder
+    colored-man-pages
+    colorize
+    copyfile
+    extract
+    safe-paste
+    systemadmin
+    urltools
+)
 
 # User configuration
 
@@ -121,13 +134,16 @@ export LD_LIBRARY_PATH=/opt/hadoop/lib/native:$LD_LIBRARY_PATH
 
 # kafka
 export KAFKA_HOME=/opt/kafka_2.12-2.3.0
+export PATH=$PATH:~/.local/bin:$KAFKA_HOME/bin
 
 # fix virtual env console print
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
-export PATH=$PATH:~/.local/bin:$KAFKA_HOME/bin
-
 eval "$(pyenv init -)"
 source $ZSH/oh-my-zsh.sh
 source $ZSH/custom/plugins/zsh-git-prompt/zshrc.sh
-source ~/.extras
+
+extras_file=/.extras
+if [ -f "$extras_file" ]; then
+    source $extras_file
+fi
