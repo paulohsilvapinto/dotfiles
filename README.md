@@ -20,7 +20,7 @@ sudo apt install vim-nox
 
 ## Installation
 
-Run
+Clone the repository and run:
 
 ```bash
 zsh ./make.sh
