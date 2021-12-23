@@ -71,15 +71,21 @@ ZSH_THEME="paulopinto"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git
     zsh-autosuggestions
     zsh-syntax-highlighting
+    zsh-history-substring-search
     zsh-vim-mode
     alias-finder
+    alias-tips
     colored-man-pages
     colorize
     copyfile
+    dirhistory
     extract
+    git
+    gitignore
+    history
+    jsontools
     safe-paste
     systemadmin
     urltools
@@ -110,6 +116,11 @@ plugins=(
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Ignore history duplicates
+setopt HIST_IGNORE_ALL_DUPS
+
+export ENHANCD_COMMAND=ecd
 
 # path and options for java
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-armhf
@@ -142,6 +153,8 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 eval "$(pyenv init -)"
 source $ZSH/oh-my-zsh.sh
 source $ZSH/custom/plugins/zsh-git-prompt/zshrc.sh
+source $ZSH/custom/plugins/ssh-connect/ssh-connect.sh
+source $ZSH/custom/plugins/enhancd/init.sh
 
 extras_file=~/.extras
 if [ -f "$extras_file" ]; then
