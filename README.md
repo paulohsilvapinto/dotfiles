@@ -11,19 +11,25 @@ For using this repository, you will need:
  - [fzf](https://github.com/junegunn/fzf) 
  - Vim-nox
 
-You can install vim-nov by running:
+You can install vim-nox by running:
 
 ```bash
 sudo apt install vim-nox
 ```
 
- - Python Build dependencies (for [Pyenv](https://github.com/pyenv/pyenv)
+ - Python Build dependencies (for [Pyenv](https://github.com/pyenv/pyenv))
 
 ## Installation
 
-Run
+1. Clone the repository and run:
 
 ```bash
 zsh ./make.sh
 ```
 
+2. Open vim and run:
+```bash
+:PluginInstall
+```
+
+3. Follow the instructios for [installing YouCompleteMe](https://github.com/ycm-core/YouCompleteMe#installation), which is a vim plugin.
