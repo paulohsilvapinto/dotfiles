@@ -84,6 +84,7 @@ plugins=(
     extract
     git
     gitignore
+    globalias
     history
     jsontools
     safe-paste
