@@ -60,7 +60,7 @@ git clone https://github.com/djui/alias-tips.git ${ZSH_CUSTOM:-~/.oh-my-zsh/cust
 git clone https://github.com/b4b4r07/enhancd.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/enhancd
 git clone --recurse-submodules https://github.com/voronkovich/gitignore.plugin.zsh.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/gitignore
 git clone https://github.com/zsh-users/zsh-history-substring-search.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
-git clone https://github.com/gko/ssh-connect.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/ssh-connect
+git clone --recurse-submodules https://github.com/gko/ssh-connect.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/ssh-connect
 
 echo "Downloading dependencies"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
