@@ -62,21 +62,28 @@ alias reload='source ~/.zshrc'
 #===================================
 
 # Services aliases
-alias start-zookeeper="nohup zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties >/dev/null 2>&1 &;"
-alias start-kafka="nohup kafka-server-start.sh $KAFKA_HOME/config/server.properties >/dev/null 2>&1 &; nohup kafka-server-start.sh $KAFKA_HOME/config/server-2.properties >/dev/null 2>&1 &;"
-alias stop-kafka="kafka-server-stop.sh; zookeeper-server-stop.sh;"
+#alias start-zookeeper="nohup zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties >/dev/null 2>&1 &;"
+#alias start-kafka="nohup kafka-server-start.sh $KAFKA_HOME/config/server.properties >/dev/null 2>&1 &; nohup kafka-server-start.sh $KAFKA_HOME/config/server-2.properties >/dev/null 2>&1 &;"
+#alias stop-kafka="kafka-server-stop.sh; zookeeper-server-stop.sh;"
+alias zookeeper-start="cluster-cmd sudo service zookeeper start"
+alias zookeeper-stop="cluster-cmd sudo service zookeeper stop"
+alias zookeeper-status="sudo service zookeeper status"
+alias kafka-start="cluster-cmd sudo service kafka start"
+alias kafka-stop="cluster-cmd sudo service kafka stop"
+alias kafka-status="sudo service kafka status"
 
 #Kafka Console Producer
-alias kcp='kafka-console-producer.sh --broker-list localhost:9092 --topic'
+alias kcp='kafka-console-producer.sh --broker-list node01:9092,node02:9092,node03:9092 --topic'
 #Kafka Console Consumer
-alias kcc='kafka-console-consumer.sh --bootstrap-server localhost:9092 --from-beginning --topic'
+alias kcc='kafka-console-consumer.sh --bootstrap-server node01:9092 --from-beginning --topic'
 #Kakfa Topics
-alias ktc='kafka-topics.sh --create --replication-factor 1 --partitions 2  --zookeeper localhost:2181 --topic'
-alias ktd='kafka-topics.sh --delete --zookeeper localhost:2181 --topic'
-alias ktl='kafka-topics.sh --list --zookeeper localhost:2181'
+alias ktc='kafka-topics.sh --create --replication-factor 1 --partitions 2 --zookeeper node01:2181,node02:2181,node03:2181/data/kafka --topic'
+alias ktd='kafka-topics.sh --describe --zookeeper node01:2181,node02:2181,node03:2181/data/kafka --topic'
+alias ktdel='kafka-topics.sh --delete --zookeeper node01:2181,node02:2181,node03:2181/data/kafka --topic'
+alias ktl='kafka-topics.sh --list --zookeeper node01:2181,node02:2181,node03:2181/data/kafka'
 #Kafka Consumer Groups
-alias kcgl='kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list'
-alias kcgd='kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group'
+alias kcgl='kafka-consumer-groups.sh --bootstrap-server node01:9092 --list'
+alias kcgd='kafka-consumer-groups.sh --bootstrap-server node01:9092 --describe --group'
 
 
 #==================================
