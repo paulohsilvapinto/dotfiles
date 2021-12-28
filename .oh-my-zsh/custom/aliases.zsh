@@ -76,6 +76,8 @@ alias kafka-status="sudo service kafka status"
 alias kcp='kafka-console-producer.sh --broker-list node01:9092,node02:9092,node03:9092 --topic'
 #Kafka Console Consumer
 alias kcc='kafka-console-consumer.sh --bootstrap-server node01:9092 --from-beginning --topic'
+#Kafka Brokers
+alias kbl='zookeeper-shell.sh localhost:2181/data/kafka ls /brokers/ids'
 #Kakfa Topics
 alias ktc='kafka-topics.sh --create --replication-factor 1 --partitions 2 --zookeeper node01:2181,node02:2181,node03:2181/data/kafka --topic'
 alias ktd='kafka-topics.sh --describe --zookeeper node01:2181,node02:2181,node03:2181/data/kafka --topic'
