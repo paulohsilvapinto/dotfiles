@@ -124,11 +124,11 @@ setopt HIST_IGNORE_ALL_DUPS
 export ENHANCD_COMMAND=ecd
 
 # path and options for java
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-armhf
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-arm64
 
 # path and options for Hadoop
 export HADOOP_HOME=/opt/hadoop
-export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+export PATH=$JAVA_HOME/bin:$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 export HADOOP_INSTALL=$HADOOP_HOME
 export HADOOP_MAPRED_HOME=$HADOOP_HOME
 export HADOOP_COMMON_HOME=$HADOOP_HOME
@@ -137,7 +137,7 @@ export HADOOP_INSTALL=$HADOOP_HOME
 export YARN_HOME=$HADOOP_HOME
 export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
-export HADOOP_OPTS="$HADOOP_OPTS -Djava.library.path=$HADOOP_HOME/lib"
+export HADOOP_OPTS="$HADOOP_OPTS -Djava.library.path=$HADOOP_HOME/lib/native"
 
 # path and options for Spark
 export SPARK_HOME=/opt/hadoop/spark
@@ -145,7 +145,7 @@ export PATH=$PATH:$SPARK_HOME/bin
 export LD_LIBRARY_PATH=/opt/hadoop/lib/native:$LD_LIBRARY_PATH
 
 # kafka
-export KAFKA_HOME=/opt/kafka_2.12-2.3.0
+export KAFKA_HOME=/opt/kafka
 export PATH=$PATH:~/.local/bin:$KAFKA_HOME/bin
 
 # fix virtual env console print
