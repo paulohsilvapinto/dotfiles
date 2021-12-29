@@ -75,17 +75,17 @@ alias kafka-status="sudo service kafka status"
 #Kafka Console Producer
 alias kcp='kafka-console-producer.sh --broker-list node01:9092,node02:9092,node03:9092 --topic'
 #Kafka Console Consumer
-alias kcc='kafka-console-consumer.sh --bootstrap-server node01:9092 --from-beginning --topic'
+alias kcc='kafka-console-consumer.sh --bootstrap-server node01:9092,node02:9092,node03:9092 --from-beginning --topic'
 #Kafka Brokers
 alias kbl='zookeeper-shell.sh localhost:2181/data/kafka ls /brokers/ids'
 #Kakfa Topics
-alias ktc='kafka-topics.sh --create --replication-factor 1 --partitions 2 --zookeeper node01:2181,node02:2181,node03:2181/data/kafka --topic'
-alias ktd='kafka-topics.sh --describe --zookeeper node01:2181,node02:2181,node03:2181/data/kafka --topic'
-alias ktdel='kafka-topics.sh --delete --zookeeper node01:2181,node02:2181,node03:2181/data/kafka --topic'
-alias ktl='kafka-topics.sh --list --zookeeper node01:2181,node02:2181,node03:2181/data/kafka'
+alias ktc='kafka-topics.sh --create --replication-factor 1 --partitions 2 --bootstrap-server node01:9092,node02:9092,node03:9092 --topic'
+alias ktd='kafka-topics.sh --describe --bootstrap-server node01:9092,node02:9092,node03:9092 --topic'
+alias ktdel='kafka-topics.sh --delete --bootstrap-server node01:9092,node02:9092,node03:9092 --topic'
+alias ktl='kafka-topics.sh --list --bootstrap-server node01:9092,node02:9092,node03:9092'
 #Kafka Consumer Groups
-alias kcgl='kafka-consumer-groups.sh --bootstrap-server node01:9092 --list'
-alias kcgd='kafka-consumer-groups.sh --bootstrap-server node01:9092 --describe --group'
+alias kcgl='kafka-consumer-groups.sh --bootstrap-server node01:9092,node02:9092,node03:9092 --list'
+alias kcgd='kafka-consumer-groups.sh --bootstrap-server node01:9092,node02:9092,node03:9092 --describe --group'
 
 
 #==================================
@@ -103,7 +103,7 @@ alias yl='yarn logs -applicationId' # + Application ID
 
 #==================================
 # Python
-#= =================================
+#==================================
 
 # Virtual Environment
 
@@ -119,3 +119,11 @@ alias pypkg='pip install -t dependencies-pkg -r requirements.txt; zip -r depende
 alias hls='hdfs dfs -ls'
 alias hrm='hdfs dfs -rm'
 alias hcat='hdfs dfs -cat'
+
+
+#==================================
+# Spark
+#==================================
+
+# History server
+alias shs-start='/opt/spark/sbin/start-history-server.sh'
