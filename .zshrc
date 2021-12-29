@@ -140,7 +140,7 @@ export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 export HADOOP_OPTS="$HADOOP_OPTS -Djava.library.path=$HADOOP_HOME/lib/native"
 
 # path and options for Spark
-export SPARK_HOME=/opt/hadoop/spark
+export SPARK_HOME=/opt/spark
 export PATH=$PATH:$SPARK_HOME/bin
 export LD_LIBRARY_PATH=/opt/hadoop/lib/native:$LD_LIBRARY_PATH
 
